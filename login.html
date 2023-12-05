@@ -74,17 +74,17 @@
         var password = document.getElementById('password').value;
         var errorMessage = document.getElementById('error-message');
 
-        // Lógica de validação simples (pode ser mais robusta dependendo dos requisitos)
+        // Lógica de validação simples 
         if (username === '' || password === '') {
             errorMessage.textContent = 'Usuário e senha são obrigatórios.';
             return false; // Impede o envio do formulário se houver erros
         }
 
-        // Lógica de autenticação (pode ser uma chamada a um servidor, por exemplo)
+        
         // Aqui estamos simulando um login simples
         if (username === 'usuario' && password === 'senha') {
             errorMessage.textContent = ''; // Limpa qualquer mensagem de erro existente
-            alert('Login bem-sucedido! Redirecionando...'); // Mensagem de alerta (pode ser removida)
+            alert('Login bem-sucedido! Redirecionando...'); // Mensagem de alerta
             window.location.href = 'index.html'; // Redireciona para outra página
             return false; // Impede o envio do formulário após o redirecionamento
         } else {
