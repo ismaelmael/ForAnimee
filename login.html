@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<form id="loginForm" onsubmit="return validarFormulario()">
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Senha:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+
+    <p class="error-message" id="error-message"></p>
+</form>
+
+<script>
+    function validarFormulario() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var errorMessage = document.getElementById('error-message');
+
+        // Lógica de validação simples (pode ser mais robusta dependendo dos requisitos)
+        if (username === '' || password === '') {
+            errorMessage.textContent = 'Usuário e senha são obrigatórios.';
+            return false; // Impede o envio do formulário se houver erros
+        }
+
+        // Lógica de autenticação (pode ser uma chamada a um servidor, por exemplo)
+        // Aqui estamos simulando um login simples
+        if (username === 'usuario' && password === 'senha') {
+            errorMessage.textContent = ''; // Limpa qualquer mensagem de erro existente
+            alert('Login bem-sucedido! Redirecionando...'); // Mensagem de alerta (pode ser removida)
+            window.location.href = 'testes.html'; // Redireciona para outra página
+            return false; // Impede o envio do formulário após o redirecionamento
+        } else {
+            errorMessage.textContent = 'Usuário ou senha incorretos.';
+            return false; // Impede o envio do formulário se houver erros
+        }
+    }
+</script>
+
+
+
+</body>
+</html>
