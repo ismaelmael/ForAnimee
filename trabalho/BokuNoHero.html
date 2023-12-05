@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página com Conteúdo</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .descricao-container {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .titulo {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .descricao {
+            font-size: 18px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        .compartilhar {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .compartilhar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span class="menu-icon" onclick="toggleMenu()">&#9776; Menu</span>
+    <h1>Meu Site</h1>
+    <p>Bem-vindo ao meu site incrível com um carrossel!</p>
+</header>
+
+<nav>
+    <a href="index.html">Página Inicial</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="contato.html">Contato</a>
+    <a href="login.html">Login</a>
+</nav>
+
+<div class="descricao-container">
+    <img src="img/anime1.jpg" alt="Imagem de Exemplo">
+
+    <div class="titulo">Título do Conteúdo</div>
+
+    <div class="descricao">
+        <p>Esta é a descrição do conteúdo. Adicione aqui qualquer informação relevante que você queira compartilhar.</p>
+    </div>
+
+    <a class="compartilhar" href="#" id= "compartilhar">Compartilhar</a>
+</div>
+
+<script>
+    function toggleMenu() {
+        var navElement = document.querySelector('nav');
+        navElement.classList.toggle('show');
+    }
+</script>
+<script>
+        const imagemCompartilhar = document.getElementById('compartilhar');
+
+        if (navigator.share) {
+        compartilhar.addEventListener('click', async () => {
+            try {
+            await navigator.share({
+                title: 'Mundo Fronteira.',
+                text: 'Mundo Fronteira.',
+                url: 'https://about.html',
+            });
+            console.log('Compartilhado feito com sucesso!');
+            } catch (error) {
+            console.error('Erro ao compartilhar:', error);
+            }
+        });
+
+        // Esconde a imagem se a API não for suportada.
+        } else {
+        imagemCompartilhar.style.display = 'none';
+        }
+    
+</script>
+</body>
+</html>
